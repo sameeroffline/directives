@@ -1,0 +1,191 @@
+<app-pipes></app-pipes>
+<h4>NgStyle Binding</h4>
+
+<div [style.font-size]="isSpecial ? 'x-large' : 'smaller'">
+  This div is x-large or smaller
+</div>
+
+<h5>Binding to currentStyles - CSS property names</h5>
+<p>currentStyles is {{currentStyles | json}}</p>
+
+<div [ngStyle]="currentStyles">
+  This div is initially italic, normal weight, and extra large (24px).
+</div>
+
+
+
+<br>
+<label>italic: <input type="checkbox" [(ngModel)]="canSave" ></label> |
+<label>normal: <input type="checkbox" [(ngModel)]="isUnchanged" ></label> |
+<label>xlarge: <input type="checkbox" [(ngModel)]="isSpecial" ></label>
+<button type="button" (click)="setCurrentStyles()">Refresh Styles</button>
+<br><br>
+
+<div [ngStyle]="currentStyles">
+  This div should be {{ canSave ? "italic": "plain"}},
+  {{ isUnchanged ? "normal weight" : "bold" }} and,
+  {{ isSpecial ? "extra large": "normal size"}} after clicking "Refresh".
+</div>
+
+<br><hr><br>
+
+
+
+
+<input [(ngModel)]="first" id="example-ngModel"><br><br>
+<input [(ngModel)]="first" id="example-ngModel"><br><br>
+<button (click)="second()" ngModel= "first">click</button>
+
+
+
+
+
+
+
+<hr>
+
+<!-- ngModel -->
+
+<h3 id="ngModel">NgModel </h3>
+
+ <h4>NgModel examples</h4>
+
+  <p><label>Current item name:{{name}}</label></p>
+  <p><label>without NgModel:</label>
+     <input [value]="name" (input)="name=getValue($event)" id="example-ngModel">
+  </p>
+
+  <p><label>[(ngModel)]:</label>
+     <input [(ngModel)]="name" id="example-ngModel">
+  </p>
+
+  <p><label>bindon-ngModel:</label>
+     <input [(ngModel)]="name" id="example-ngModel">
+  </p>
+
+  <p><label>(ngModelChange)="...name=$event":</label>
+     <input [ngModel]="name" (ngModelChange)="name=$event" id="example-ngModel">
+  </p>
+
+  <p><label>(ngModelChange)="setUppercaseName($event)": </label>
+     <input [ngModel]="name" (ngModelChange)="setUppercaseName($event)" id="example-ngModel">
+  </p>
+  
+
+
+
+
+
+
+
+
+  <!-- <hello name="{{ name }}"></hello> -->
+
+
+<h2>
+   ngIf ngFor ngSwitch learn angular
+</h2>
+
+
+<div *ngIf= "users">
+   users are present 
+
+
+
+
+    <div *ngFor="let user of users">
+      {{user.name}}
+      {{user.age}}
+      {{user.gender}}
+   </div><br>
+ 
+   <!-- -----------ngIf------------------- -->
+   <!-- <div *ngIf= "users"></div>
+              (or)
+    <ng-template [ngIf]="users"></ng-template> -->
+
+
+
+
+   <div *ngFor= "let user of users">
+      <div [ngSwitch]= "user.gender">
+         <div class="maleBox" *ngSwitchCase="'m'">
+            {{user.name}}
+         </div>
+         <div *ngFor="let user1 of user.shift1" [ngClass]="{femaleBox:user1}">{{user1.a}}{{user1.b}}</div>
+         <div class="femaleBox" *ngSwitchCase="'f'">
+            {{user.name}}
+         </div>
+      </div>
+   </div>
+</div>
+<br><br><br><br>
+
+
+
+
+<div *ngIf= "users"> 
+
+<div *ngFor= "let user of users">
+<div [ngSwitch]= "user.shift">
+
+   <div class="shift1" *ngSwitchCase="'1'">
+      {{user.name}}
+   </div>
+   <div class="shift2" *ngSwitchCase="'2'">
+      {{user.age}}
+   </div>
+   <div class="shift3" *ngSwitchCase="'3'">
+      {{user.name}}
+   </div>
+   <div class="shift4" *ngSwitchCase="'4'">
+      {{user.name}}
+   </div>
+</div>
+</div>
+</div> 
+
+
+
+
+
+
+<div  *ngIf= "isFirstName; then firstName; else lastName">
+
+</div>
+
+<ng-template #firstName>
+   <h2>muthu</h2>
+</ng-template>
+
+<ng-template #lastName>
+   <h2>pandi</h2>
+</ng-template>
+<br><hr><br>
+
+
+
+
+ <h1>ANGULAR PIPES</h1>
+ <h1>{{ title2 | uppercase }}</h1>uppercase
+ <h1>{{ title2 | lowercase }}</h1>lowercase
+ <h1>{{ title2 }}</h1>title
+ <h2>{{ today }}</h2>today date & time
+ <h2>{{ today | date }}</h2>
+ <h2>{{ today | date:'fullDate'</h2>
+
+
+ <h3>{{capString(title)}}</h3>
+
+
+
+
+
+
+
+
+
+ <div>{{day | date:'dd/mm/yyyy'}}</div>
+ <div> Number: {{ num | number: '2.2-4'}}</div>
+ <div> Number: {{ num | number: '6.2-4'}}</div>
+ <div> Number: {{ num | number: '6.3-4'}}</div>

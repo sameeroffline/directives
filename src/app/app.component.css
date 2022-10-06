@@ -1,0 +1,43 @@
+p{
+    font-family:'Courier New', Courier, monospace;
+}
+
+
+
+.maleBox{
+    background: rebeccapurple;
+    margin: 5px;
+    color: white;
+}
+
+.femaleBox{
+    background: red;
+    margin: 5px;
+    color: white;
+} 
+
+ .shift1{
+
+    background: rgb(221, 164, 19);
+    margin: 5px;
+    color: white;
+ }
+ .shift2{
+
+    background: rgb(6, 158, 125);
+    margin: 5px;
+    color: white;
+ }
+ .shift3{
+
+    background: rgb(4, 50, 216);
+    margin: 5px;
+    color: white;
+ }
+ .shift4{
+
+    background: rgb(151, 5, 184);
+    margin: 5px;
+    color: white;
+ }
+ 
